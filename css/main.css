@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap');
+
+/* CSS custom properties */
+:root {
+    --main-color : #2491f6;
+    --secondary-color : #ececec;
+    --transparent-color: #15627aa1;
+    --section-padding : 100px;
+    --paragraph-color : #737373;
+    --main-duration : 0.3s;
+}
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+/* Global Rules CSS */
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Cairo', sans-serif;
+}
+ul {
+    list-style: none;
+}
+/*global container css*/
+.container { 
+    padding-left: 15px;
+    padding-right: 15px;
+    /* La valeur auto indique que le margin va prendre ce qui reste comme valeur aprés le width */
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .container {
+        width: 750px;
+    }
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    .container {
+        width: 970px;
+    }
+}
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1200px) { 
+    .container {
+        width: 1170px;
+    }
+}
+/* Start Component */
+.main-heading {
+    text-align: center;
+}
+
+.main-heading h2 {
+    font-size: 30px;
+    font-weight: bold;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 2px black solid;
+    width: fit-content;
+    padding: 10px 20px;
+    margin: 0 auto 100px;
+}
+
+.main-heading h2::before {
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: black;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -35px;
+    background-color: var(--main-color);
+}
+
+.main-heading h2::after {
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: black;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -35px;
+    background-color: var(--main-color);
+}
+/* End Component */
+/* Start Header Section */
+header {
+    padding: 20px;
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .container .logo {
+    height: auto;
+    width: auto;
+    max-width: 160px;
+    max-height: 120px;
+    flex-basis: 30%;
+}
+header .container .menu {
+    flex-basis: 40%;
+}
+header .container .menu ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+header .container .menu ul li {
+    font-size: 18px;
+}
+/* End Header Section */
+/* Start Landing Page */
+.landing {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-color: var(--secondary-color)
+}
+.landing .container {
+    display: flex;
+    justify-content: center;
+}
+.landing .container .landing-text {
+    
+}
+.landing .container .landing-text h1 {
+    font-weight: 800;
+    font-size: 35px;
+}
+.landing .container .landing-text p {
+    color: var(--paragraph-color);
+    font-size: 18px;
+}
+.landing .container img {
+    width: 600px;
+}
+@media(max-width:991px) {
+    .landing .container img {
+        display: none;
+    }
+}
+/* End Landing Page */
+/* Start Articles Page */
+.articles {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.articles .container {
+
+}
+.articles .container .boxs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+.articles .container .boxs .box {
+    
+}
+.articles .container .boxs .box img {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 5% 5% 0 0;
+}
+.articles .container .boxs .box .content {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+.articles .container .boxs .box .content h4 {
+    margin: 15px 0 15px 15px;
+    font-size: 18px;
+}
+.articles .container .boxs .box .content p {
+    margin: 0 0 15px 15px;
+}
+.articles .container .boxs .box .more {
+    display: flex;
+    margin-left: 15px;
+}
+.articles .container .boxs .box .more span {
+    font-weight: 700;
+    color: var(--main-color);
+    flex-basis: 90%;
+}
+.articles .container .boxs .box .more i {
+    color: var(--main-color);
+}
+/* End Articles Page */
